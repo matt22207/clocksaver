@@ -23,7 +23,7 @@ if (params.has("randomizeColor") && (params.get("randomizeColor") == "false" || 
 const speed = params.has("speed") ? params.get("speed") : 2500;
 
 const clock = document.createElement("div");
-const textnode = document.createTextNode(new Date().toString());
+const textnode = document.createTextNode(new Date().toLocaleString('en-US', { timeZoneName: 'short' }));
 clock.appendChild(textnode);
 
 // set the ID and the fill color to the logo
@@ -58,5 +58,5 @@ setInterval(() => {
 },speed);
 
 setInterval(() => {
-    clock.innerText = new Date().toString();
+    clock.innerText = new Date().toLocaleString('en-US', { timeZoneName: 'short' });
 }, 1000)
